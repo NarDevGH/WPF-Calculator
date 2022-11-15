@@ -1,0 +1,68 @@
+﻿<Window x:Class="Calculator_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator_Project"
+        mc:Ignorable="d"
+        Title="Calculator" Height="430" Width="280">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!--Display -->
+        <TextBox Grid.Column="0" Grid.Row="0"
+                 Grid.ColumnSpan="4"
+                 x:Name="Display_txtBox"
+                 TextAlignment="Right"
+                 VerticalAlignment="Bottom"
+                 BorderThickness="0"
+                 IsReadOnly="True"
+                 FontSize="30"
+                 Text="0">
+        </TextBox>
+
+        <!-- Number Buttons -->
+        <Button Click="Number_Click" Tag="1" Grid.Column="0" Grid.Row="4"> 1 </Button>
+        <Button Click="Number_Click" Tag="4" Grid.Column="0" Grid.Row="3"> 4 </Button>
+        <Button Click="Number_Click" Tag="7" Grid.Column="0" Grid.Row="2"> 7 </Button>
+        <Button Click="Number_Click" Tag="2" Grid.Column="1" Grid.Row="4"> 2 </Button>
+        <Button Click="Number_Click" Tag="5" Grid.Column="1" Grid.Row="3"> 5 </Button>
+        <Button Click="Number_Click" Tag="8" Grid.Column="1" Grid.Row="2"> 8 </Button>
+        <Button Click="Number_Click" Tag="3" Grid.Column="2" Grid.Row="4"> 3 </Button>
+        <Button Click="Number_Click" Tag="6" Grid.Column="2" Grid.Row="3"> 6 </Button>
+        <Button Click="Number_Click" Tag="9" Grid.Column="2" Grid.Row="2"> 9 </Button>
+        <Button Click="Number_Click" Tag="0" Grid.Column="1" Grid.Row="5"> 0 </Button>
+
+        
+        <!-- Math Buttons -->
+        <Button Click="MathOp_Click" Tag="+" Grid.Column="3" Grid.Row="1"> + </Button>
+        <Button Click="MathOp_Click" Tag="-" Grid.Column="3" Grid.Row="2"> - </Button>
+        <Button Click="MathOp_Click" Tag="*" Grid.Column="3" Grid.Row="3"> * </Button>
+        <Button Click="MathOp_Click" Tag="/" Grid.Column="3" Grid.Row="4"> / </Button>
+        <Button Click="MathOp_Click" Tag="=" Grid.Column="3" Grid.Row="5"> = </Button>
+
+        <!-- Clear Buttons -->
+        <Button x:Name = "ClearEntry_btn" Grid.Column="0" Grid.Row="1" Click="ClearEntry_btn_Click">CE</Button>
+        <Button x:Name = "Clear_btn" Grid.Column="1" Grid.Row="1" Click="Clear_btn_Click">C</Button>
+        <Button x:Name = "Backspace_btn" Grid.Column="2" Grid.Row="1" Content="&lt;=" Click="Backspace_btn_Click"></Button>
+        
+        <!-- Misc. -->
+        <Button x:Name = "PositiveNegative_btn" Grid.Column="0" Grid.Row="5" Content="+-" Click="PositiveNegative_btn_Click"></Button>
+
+    </Grid>
+</Window>
